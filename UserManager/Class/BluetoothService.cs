@@ -10,13 +10,13 @@ namespace UserManager.Class
 {
     class BluetoothService
     {
-        public DataTable TableHolder;
-        private void RefreshBluetoothDevice()
+
+        public DataTable RefreshBluetoothDevice()
         {
+            DataTable TableHolder = new DataTable();
             BluetoothDeviceInfo[] Devices;
             using (BluetoothClient SDP = new BluetoothClient())
                 Devices = SDP.DiscoverDevices();
-            DataTable TableHolder = new DataTable();
             TableHolder.Columns.Add("Device MAC");
             TableHolder.Columns.Add("Device Name");
             TableHolder.Columns.Add("Pair Status");
@@ -30,6 +30,7 @@ namespace UserManager.Class
                 TableHolder.Rows[x].SetField(2, DeviceInfo.Authenticated);
                 x++;
             }
+            return TableHolder;
         }
     }
 }

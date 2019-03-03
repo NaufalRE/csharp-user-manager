@@ -660,7 +660,7 @@ namespace UserManager.Form
 
         private void GetBluetoothData()
         {
-            GC_BluetoothDevices.DataSource = BService.TableHolder;
+            GC_BluetoothDevices.DataSource = BService.RefreshBluetoothDevice();
         }
 
         private void GetBluetoothDevice()
