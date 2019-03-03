@@ -17,7 +17,7 @@ namespace UserManager.Form
     public partial class ucUser : XtraUserControl
     {
         DataBridge DataBr = new DataBridge();
-        BluetoothService BService = new BluetoothService()
+        BluetoothService BService = new BluetoothService();
         String Id_user;
         String nama_user;
         //じゃこれはレッドニメのスクリプト
@@ -660,7 +660,7 @@ namespace UserManager.Form
 
         private void GetBluetoothData()
         {
-            GC_BluetoothDevices.DataSource = BService.TableHolder();
+            GC_BluetoothDevices.DataSource = BService.TableHolder;
         }
 
         private void GetBluetoothDevice()
@@ -815,7 +815,7 @@ namespace UserManager.Form
 
         private void B_RefreshDevice_Click(object sender, EventArgs e)
         {
-            RefreshBluetoothDevice();
+            GetBluetoothData();
         }
 
         private void GC_BluetoothDevices_MouseClick(object sender, MouseEventArgs e)
