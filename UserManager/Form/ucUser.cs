@@ -274,11 +274,11 @@ namespace UserManager.Form
             {
                 if(capability == "Admin")
                 {
-                    DGC_User.DataSource = DataBr.GetSql("SELECT id_user as 'ID User', nama as 'Nama', username as 'Username', email as 'Email', hak_akses as 'Hak Akses', IFNULL(date_modified, 'Belum ada perubahan') as 'Date Modified', date_created as 'Date Created' FROM t_user");
+                    DGC_User.DataSource = DataBr.GetSql("SELECT id_user as 'ID User', nama as 'Nama', username as 'Username', email as 'Email', hak_akses as 'Hak Akses', date_modified as 'Date Modified', date_created as 'Date Created' FROM t_user");
                 }
                 else
                 {
-                    DGC_User.DataSource = DataBr.GetSql("SELECT id_user as 'ID User', nama as 'Nama', username as 'Username', email as 'Email', hak_akses as 'Hak Akses', IFNULL(date_modified, 'Belum ada perubahan') as 'Date Modified', date_created as 'Date Created' FROM t_user WHERE id_user = '"+GlobalVar.U_ID_USER+"'");
+                    DGC_User.DataSource = DataBr.GetSql("SELECT id_user as 'ID User', nama as 'Nama', username as 'Username', email as 'Email', hak_akses as 'Hak Akses', date_modified as 'Date Modified', date_created as 'Date Created' FROM t_user WHERE id_user = '"+GlobalVar.U_ID_USER+"'");
                 }
                 
             }

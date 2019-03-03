@@ -58,6 +58,13 @@
             this.TN_UserTrackHistory = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.GC_UserTrackHistory = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.TN_AdvanceLogin = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.B_RefreshDevice = new DevExpress.XtraEditors.SimpleButton();
+            this.B_UnregisterDevice = new DevExpress.XtraEditors.SimpleButton();
+            this.B_RegisterDevice = new DevExpress.XtraEditors.SimpleButton();
+            this.GC_BluetoothDevices = new DevExpress.XtraGrid.GridControl();
+            this.GV_BluetoothDevice = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.B_Find = new DevExpress.XtraEditors.SimpleButton();
             this.T_SearchField = new DevExpress.XtraEditors.TextEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -67,13 +74,6 @@
             this.B_Refresh = new DevExpress.XtraEditors.SimpleButton();
             this.DGC_User = new DevExpress.XtraGrid.GridControl();
             this.GV_Data = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.TN_AdvanceLogin = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.GC_BluetoothDevices = new DevExpress.XtraGrid.GridControl();
-            this.GV_BluetoothDevice = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.B_RegisterDevice = new DevExpress.XtraEditors.SimpleButton();
-            this.B_UnregisterDevice = new DevExpress.XtraEditors.SimpleButton();
-            this.B_RefreshDevice = new DevExpress.XtraEditors.SimpleButton();
             this.xtraScrollableControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TP_User)).BeginInit();
             this.TP_User.SuspendLayout();
@@ -90,14 +90,14 @@
             this.TN_UserTrackHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GC_UserTrackHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            this.TN_AdvanceLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GC_BluetoothDevices)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GV_BluetoothDevice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.T_SearchField.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGC_User)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GV_Data)).BeginInit();
-            this.TN_AdvanceLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GC_BluetoothDevices)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GV_BluetoothDevice)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraScrollableControl1
@@ -408,6 +408,71 @@
             this.gridView2.OptionsView.ShowFooter = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
+            // TN_AdvanceLogin
+            // 
+            this.TN_AdvanceLogin.Caption = "Advance Login Option";
+            this.TN_AdvanceLogin.Controls.Add(this.B_RefreshDevice);
+            this.TN_AdvanceLogin.Controls.Add(this.B_UnregisterDevice);
+            this.TN_AdvanceLogin.Controls.Add(this.B_RegisterDevice);
+            this.TN_AdvanceLogin.Controls.Add(this.GC_BluetoothDevices);
+            this.TN_AdvanceLogin.Controls.Add(this.labelControl4);
+            this.TN_AdvanceLogin.Name = "TN_AdvanceLogin";
+            this.TN_AdvanceLogin.Size = new System.Drawing.Size(790, 167);
+            // 
+            // B_RefreshDevice
+            // 
+            this.B_RefreshDevice.Location = new System.Drawing.Point(414, 36);
+            this.B_RefreshDevice.Name = "B_RefreshDevice";
+            this.B_RefreshDevice.Size = new System.Drawing.Size(91, 23);
+            this.B_RefreshDevice.TabIndex = 4;
+            this.B_RefreshDevice.Text = "Refresh Device";
+            this.B_RefreshDevice.Click += new System.EventHandler(this.B_RefreshDevice_Click);
+            // 
+            // B_UnregisterDevice
+            // 
+            this.B_UnregisterDevice.Location = new System.Drawing.Point(511, 101);
+            this.B_UnregisterDevice.Name = "B_UnregisterDevice";
+            this.B_UnregisterDevice.Size = new System.Drawing.Size(91, 23);
+            this.B_UnregisterDevice.TabIndex = 3;
+            this.B_UnregisterDevice.Text = "Unregister";
+            this.B_UnregisterDevice.Click += new System.EventHandler(this.B_UnregisterDevice_Click);
+            // 
+            // B_RegisterDevice
+            // 
+            this.B_RegisterDevice.Location = new System.Drawing.Point(414, 101);
+            this.B_RegisterDevice.Name = "B_RegisterDevice";
+            this.B_RegisterDevice.Size = new System.Drawing.Size(91, 23);
+            this.B_RegisterDevice.TabIndex = 2;
+            this.B_RegisterDevice.Text = "Register";
+            this.B_RegisterDevice.Click += new System.EventHandler(this.B_RegisterDevice_Click);
+            // 
+            // GC_BluetoothDevices
+            // 
+            this.GC_BluetoothDevices.Dock = System.Windows.Forms.DockStyle.Left;
+            this.GC_BluetoothDevices.Location = new System.Drawing.Point(0, 0);
+            this.GC_BluetoothDevices.MainView = this.GV_BluetoothDevice;
+            this.GC_BluetoothDevices.Name = "GC_BluetoothDevices";
+            this.GC_BluetoothDevices.Size = new System.Drawing.Size(408, 167);
+            this.GC_BluetoothDevices.TabIndex = 1;
+            this.GC_BluetoothDevices.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.GV_BluetoothDevice});
+            this.GC_BluetoothDevices.MouseClick += new System.Windows.Forms.MouseEventHandler(this.GC_BluetoothDevices_MouseClick);
+            // 
+            // GV_BluetoothDevice
+            // 
+            this.GV_BluetoothDevice.GridControl = this.GC_BluetoothDevices;
+            this.GV_BluetoothDevice.Name = "GV_BluetoothDevice";
+            this.GV_BluetoothDevice.OptionsBehavior.Editable = false;
+            this.GV_BluetoothDevice.OptionsView.ShowGroupPanel = false;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(414, 17);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(122, 13);
+            this.labelControl4.TabIndex = 0;
+            this.labelControl4.Text = "Bluetooth Login Service";
+            // 
             // B_Find
             // 
             this.B_Find.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -499,71 +564,6 @@
             this.GV_Data.OptionsView.ShowFooter = true;
             this.GV_Data.OptionsView.ShowGroupPanel = false;
             // 
-            // TN_AdvanceLogin
-            // 
-            this.TN_AdvanceLogin.Caption = "Advance Login Option";
-            this.TN_AdvanceLogin.Controls.Add(this.B_RefreshDevice);
-            this.TN_AdvanceLogin.Controls.Add(this.B_UnregisterDevice);
-            this.TN_AdvanceLogin.Controls.Add(this.B_RegisterDevice);
-            this.TN_AdvanceLogin.Controls.Add(this.GC_BluetoothDevices);
-            this.TN_AdvanceLogin.Controls.Add(this.labelControl4);
-            this.TN_AdvanceLogin.Name = "TN_AdvanceLogin";
-            this.TN_AdvanceLogin.Size = new System.Drawing.Size(790, 167);
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(414, 17);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(122, 13);
-            this.labelControl4.TabIndex = 0;
-            this.labelControl4.Text = "Bluetooth Login Service";
-            // 
-            // GC_BluetoothDevices
-            // 
-            this.GC_BluetoothDevices.Dock = System.Windows.Forms.DockStyle.Left;
-            this.GC_BluetoothDevices.Location = new System.Drawing.Point(0, 0);
-            this.GC_BluetoothDevices.MainView = this.GV_BluetoothDevice;
-            this.GC_BluetoothDevices.Name = "GC_BluetoothDevices";
-            this.GC_BluetoothDevices.Size = new System.Drawing.Size(408, 167);
-            this.GC_BluetoothDevices.TabIndex = 1;
-            this.GC_BluetoothDevices.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.GV_BluetoothDevice});
-            this.GC_BluetoothDevices.MouseClick += new System.Windows.Forms.MouseEventHandler(this.GC_BluetoothDevices_MouseClick);
-            // 
-            // GV_BluetoothDevice
-            // 
-            this.GV_BluetoothDevice.GridControl = this.GC_BluetoothDevices;
-            this.GV_BluetoothDevice.Name = "GV_BluetoothDevice";
-            this.GV_BluetoothDevice.OptionsBehavior.Editable = false;
-            this.GV_BluetoothDevice.OptionsView.ShowGroupPanel = false;
-            // 
-            // B_RegisterDevice
-            // 
-            this.B_RegisterDevice.Location = new System.Drawing.Point(414, 101);
-            this.B_RegisterDevice.Name = "B_RegisterDevice";
-            this.B_RegisterDevice.Size = new System.Drawing.Size(91, 23);
-            this.B_RegisterDevice.TabIndex = 2;
-            this.B_RegisterDevice.Text = "Register";
-            this.B_RegisterDevice.Click += new System.EventHandler(this.B_RegisterDevice_Click);
-            // 
-            // B_UnregisterDevice
-            // 
-            this.B_UnregisterDevice.Location = new System.Drawing.Point(511, 101);
-            this.B_UnregisterDevice.Name = "B_UnregisterDevice";
-            this.B_UnregisterDevice.Size = new System.Drawing.Size(91, 23);
-            this.B_UnregisterDevice.TabIndex = 3;
-            this.B_UnregisterDevice.Text = "Unregister";
-            this.B_UnregisterDevice.Click += new System.EventHandler(this.B_UnregisterDevice_Click);
-            // 
-            // B_RefreshDevice
-            // 
-            this.B_RefreshDevice.Location = new System.Drawing.Point(414, 36);
-            this.B_RefreshDevice.Name = "B_RefreshDevice";
-            this.B_RefreshDevice.Size = new System.Drawing.Size(91, 23);
-            this.B_RefreshDevice.TabIndex = 4;
-            this.B_RefreshDevice.Text = "Refresh Device";
-            this.B_RefreshDevice.Click += new System.EventHandler(this.B_RefreshDevice_Click);
-            // 
             // ucUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -589,15 +589,15 @@
             this.TN_UserTrackHistory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GC_UserTrackHistory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            this.TN_AdvanceLogin.ResumeLayout(false);
+            this.TN_AdvanceLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GC_BluetoothDevices)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GV_BluetoothDevice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.T_SearchField.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGC_User)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GV_Data)).EndInit();
-            this.TN_AdvanceLogin.ResumeLayout(false);
-            this.TN_AdvanceLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GC_BluetoothDevices)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GV_BluetoothDevice)).EndInit();
             this.ResumeLayout(false);
 
         }
