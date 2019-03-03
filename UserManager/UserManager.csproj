@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\BluetoothService.cs" />
     <Compile Include="Class\DataBridge.cs" />
     <Compile Include="Class\DeviceId.cs" />
     <Compile Include="Class\GlobalVar.cs" />

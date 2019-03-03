@@ -17,6 +17,7 @@ namespace UserManager.Form
     public partial class ucUser : XtraUserControl
     {
         DataBridge DataBr = new DataBridge();
+        BluetoothService BService = new BluetoothService()
         String Id_user;
         String nama_user;
         //じゃこれはレッドニメのスクリプト
@@ -657,32 +658,14 @@ namespace UserManager.Form
             }
         }
 
-        private void RefreshBluetoothDevice()
+        private void GetBluetoothData()
         {
-            BluetoothDeviceInfo[] Devices;
-            using (BluetoothClient SDP = new BluetoothClient())
-                Devices = SDP.DiscoverDevices();
-            DataTable TableHolder = new DataTable();
-            TableHolder.Columns.Add("Device MAC");
-            TableHolder.Columns.Add("Device Name");
-            TableHolder.Columns.Add("Pair Status");
-            int x = 0;
-
-            foreach (BluetoothDeviceInfo DeviceInfo in Devices)
-            {
-                TableHolder.Rows.Add(new Object[] { "" });
-                TableHolder.Rows[x].SetField(0, DeviceInfo.DeviceAddress);
-                TableHolder.Rows[x].SetField(1, DeviceInfo.DeviceName);
-                TableHolder.Rows[x].SetField(2, DeviceInfo.Authenticated);
-                x++;
-            }
-            GC_BluetoothDevices.DataSource = TableHolder;
+            GC_BluetoothDevices.DataSource = BService.TableHolder();
         }
 
         private void GetBluetoothDevice()
         {
             GlobalVar.D_B_MAC = GV_BluetoothDevice.GetRowCellValue(GV_BluetoothDevice.GetSelectedRows()[0], "Device MAC").ToString();
-            MessageBox.Show(GlobalVar.D_B_MAC);
         }
 
         private void ucUser_Load(object sender, EventArgs e)
