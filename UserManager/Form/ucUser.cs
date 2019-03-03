@@ -219,7 +219,22 @@ namespace UserManager.Form
             }
             CleanUP();
             DisableInput();
+
+            DataTable AdvanceLoginChecker = DataBr.GetSql("SELECT b_special_key FROM t_user WHERE id_user = '" + GlobalVar.U_ID_USER + "'");
+            if(AdvanceLoginChecker.Rows[0][0].ToString() == "")
+            {
+                GC_BluetoothDevices.Visible = true;
+                B_RegisterDevice.Enabled = true;
+                B_UnregisterDevice.Enabled = false;
+            }
+            else
+            {
+                GC_BluetoothDevices.Visible = false;
+                B_RegisterDevice.Enabled = false;
+                B_UnregisterDevice.Enabled = true;
+            }
         }
+
 
         private void SelectedItem()
         {

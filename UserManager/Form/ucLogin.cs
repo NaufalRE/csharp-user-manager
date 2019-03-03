@@ -90,7 +90,7 @@ namespace UserManager.Form
                         GlobalVar.U_NAME_USER = _tempuser.Rows[0][1].ToString();
                         GlobalVar.U_USERNAME = _tempuser.Rows[0][2].ToString();
                         GlobalVar.U_EMAIL_USER = _tempuser.Rows[0][3].ToString();
-                        GlobalVar.U_CAPABILITY = _tempuser.Rows[0][5].ToString();
+                        GlobalVar.U_CAPABILITY = _tempuser.Rows[0][6].ToString();
                         GlobalVar.U_SESSION = DataBr.AutomaticSessionCode();
                         Boolean LoggingStatus = DataBr.SetSql("CALL LoginCheck('" + GlobalVar.U_SESSION + "', '" + GlobalVar.U_ID_USER + "', '" + DeviDer.DeviceIdIdentifier() + "', '" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "')");
                         if (LoggingStatus)

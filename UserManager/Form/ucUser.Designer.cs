@@ -67,6 +67,12 @@
             this.B_Refresh = new DevExpress.XtraEditors.SimpleButton();
             this.DGC_User = new DevExpress.XtraGrid.GridControl();
             this.GV_Data = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.TN_AdvanceLogin = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.GC_BluetoothDevices = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.B_RegisterDevice = new DevExpress.XtraEditors.SimpleButton();
+            this.B_UnregisterDevice = new DevExpress.XtraEditors.SimpleButton();
             this.xtraScrollableControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TP_User)).BeginInit();
             this.TP_User.SuspendLayout();
@@ -88,6 +94,9 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGC_User)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GV_Data)).BeginInit();
+            this.TN_AdvanceLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GC_BluetoothDevices)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraScrollableControl1
@@ -110,11 +119,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TP_User.Controls.Add(this.TN_FillForm);
             this.TP_User.Controls.Add(this.TN_UserTrackHistory);
+            this.TP_User.Controls.Add(this.TN_AdvanceLogin);
             this.TP_User.Location = new System.Drawing.Point(21, 299);
             this.TP_User.Name = "TP_User";
             this.TP_User.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.TN_FillForm,
-            this.TN_UserTrackHistory});
+            this.TN_UserTrackHistory,
+            this.TN_AdvanceLogin});
             this.TP_User.RegularSize = new System.Drawing.Size(790, 196);
             this.TP_User.SelectedPage = this.TN_FillForm;
             this.TP_User.Size = new System.Drawing.Size(790, 196);
@@ -487,6 +498,57 @@
             this.GV_Data.OptionsView.ShowFooter = true;
             this.GV_Data.OptionsView.ShowGroupPanel = false;
             // 
+            // TN_AdvanceLogin
+            // 
+            this.TN_AdvanceLogin.Caption = "Advance Login Option";
+            this.TN_AdvanceLogin.Controls.Add(this.B_UnregisterDevice);
+            this.TN_AdvanceLogin.Controls.Add(this.B_RegisterDevice);
+            this.TN_AdvanceLogin.Controls.Add(this.GC_BluetoothDevices);
+            this.TN_AdvanceLogin.Controls.Add(this.labelControl4);
+            this.TN_AdvanceLogin.Name = "TN_AdvanceLogin";
+            this.TN_AdvanceLogin.Size = new System.Drawing.Size(790, 167);
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(414, 17);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(122, 13);
+            this.labelControl4.TabIndex = 0;
+            this.labelControl4.Text = "Bluetooth Login Service";
+            // 
+            // GC_BluetoothDevices
+            // 
+            this.GC_BluetoothDevices.Dock = System.Windows.Forms.DockStyle.Left;
+            this.GC_BluetoothDevices.Location = new System.Drawing.Point(0, 0);
+            this.GC_BluetoothDevices.MainView = this.gridView1;
+            this.GC_BluetoothDevices.Name = "GC_BluetoothDevices";
+            this.GC_BluetoothDevices.Size = new System.Drawing.Size(408, 167);
+            this.GC_BluetoothDevices.TabIndex = 1;
+            this.GC_BluetoothDevices.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.GC_BluetoothDevices;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // B_RegisterDevice
+            // 
+            this.B_RegisterDevice.Location = new System.Drawing.Point(414, 101);
+            this.B_RegisterDevice.Name = "B_RegisterDevice";
+            this.B_RegisterDevice.Size = new System.Drawing.Size(91, 23);
+            this.B_RegisterDevice.TabIndex = 2;
+            this.B_RegisterDevice.Text = "Register";
+            // 
+            // B_UnregisterDevice
+            // 
+            this.B_UnregisterDevice.Location = new System.Drawing.Point(511, 101);
+            this.B_UnregisterDevice.Name = "B_UnregisterDevice";
+            this.B_UnregisterDevice.Size = new System.Drawing.Size(91, 23);
+            this.B_UnregisterDevice.TabIndex = 3;
+            this.B_UnregisterDevice.Text = "Unregister";
+            // 
             // ucUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -517,6 +579,10 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGC_User)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GV_Data)).EndInit();
+            this.TN_AdvanceLogin.ResumeLayout(false);
+            this.TN_AdvanceLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GC_BluetoothDevices)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -562,5 +628,11 @@
         private DevExpress.XtraEditors.SimpleButton B_SeekPassword1;
         private DevExpress.XtraEditors.ProgressBarControl PB_ComplexPass;
         private DevExpress.XtraEditors.CheckEdit CE_ComplexPass;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage TN_AdvanceLogin;
+        private DevExpress.XtraEditors.SimpleButton B_UnregisterDevice;
+        private DevExpress.XtraEditors.SimpleButton B_RegisterDevice;
+        private DevExpress.XtraGrid.GridControl GC_BluetoothDevices;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
     }
 }
