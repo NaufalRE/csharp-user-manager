@@ -19,6 +19,7 @@ namespace UserManager.Class
                 Devices = SDP.DiscoverDevices();
             TableHolder.Columns.Add("Device MAC");
             TableHolder.Columns.Add("Device Name");
+            TableHolder.Columns.Add("Signal Strength");
             TableHolder.Columns.Add("Pair Status");
             int x = 0;
 
@@ -27,7 +28,8 @@ namespace UserManager.Class
                 TableHolder.Rows.Add(new Object[] { "" });
                 TableHolder.Rows[x].SetField(0, DeviceInfo.DeviceAddress);
                 TableHolder.Rows[x].SetField(1, DeviceInfo.DeviceName);
-                TableHolder.Rows[x].SetField(2, DeviceInfo.Authenticated);
+                TableHolder.Rows[x].SetField(2, DeviceInfo.Rssi);
+                TableHolder.Rows[x].SetField(3, DeviceInfo.Authenticated);
                 x++;
             }
             return TableHolder;
