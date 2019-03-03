@@ -14,6 +14,7 @@ namespace UserManager.Class
         static String u_email_user;
         static String u_capability;
         static String u_session;
+        static String d_b_mac;
 
         public static void CleanUP()
         {
@@ -93,6 +94,18 @@ namespace UserManager.Class
             set
             {
                 u_session = value;
+            }
+        }
+
+        public static String D_B_MAC
+        {
+            get
+            {
+                return d_b_mac;
+            }
+            set
+            {
+                d_b_mac = value;
             }
         }
     }

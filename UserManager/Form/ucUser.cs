@@ -679,6 +679,12 @@ namespace UserManager.Form
             GC_BluetoothDevices.DataSource = TableHolder;
         }
 
+        private void GetBluetoothDevice()
+        {
+            GlobalVar.D_B_MAC = GV_BluetoothDevice.GetRowCellValue(GV_BluetoothDevice.GetSelectedRows()[0], "Device MAC").ToString();
+            MessageBox.Show(GlobalVar.D_B_MAC);
+        }
+
         private void ucUser_Load(object sender, EventArgs e)
         {
             FormOnLoad();
@@ -827,6 +833,11 @@ namespace UserManager.Form
         private void B_RefreshDevice_Click(object sender, EventArgs e)
         {
             RefreshBluetoothDevice();
+        }
+
+        private void GC_BluetoothDevices_MouseClick(object sender, MouseEventArgs e)
+        {
+            GetBluetoothDevice();
         }
     }
 }

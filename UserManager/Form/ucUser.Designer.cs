@@ -70,7 +70,7 @@
             this.TN_AdvanceLogin = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.GC_BluetoothDevices = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.GV_BluetoothDevice = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.B_RegisterDevice = new DevExpress.XtraEditors.SimpleButton();
             this.B_UnregisterDevice = new DevExpress.XtraEditors.SimpleButton();
             this.B_RefreshDevice = new DevExpress.XtraEditors.SimpleButton();
@@ -97,7 +97,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.GV_Data)).BeginInit();
             this.TN_AdvanceLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GC_BluetoothDevices)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GV_BluetoothDevice)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraScrollableControl1
@@ -522,18 +522,20 @@
             // 
             this.GC_BluetoothDevices.Dock = System.Windows.Forms.DockStyle.Left;
             this.GC_BluetoothDevices.Location = new System.Drawing.Point(0, 0);
-            this.GC_BluetoothDevices.MainView = this.gridView1;
+            this.GC_BluetoothDevices.MainView = this.GV_BluetoothDevice;
             this.GC_BluetoothDevices.Name = "GC_BluetoothDevices";
             this.GC_BluetoothDevices.Size = new System.Drawing.Size(408, 167);
             this.GC_BluetoothDevices.TabIndex = 1;
             this.GC_BluetoothDevices.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.GV_BluetoothDevice});
+            this.GC_BluetoothDevices.MouseClick += new System.Windows.Forms.MouseEventHandler(this.GC_BluetoothDevices_MouseClick);
             // 
-            // gridView1
+            // GV_BluetoothDevice
             // 
-            this.gridView1.GridControl = this.GC_BluetoothDevices;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.GV_BluetoothDevice.GridControl = this.GC_BluetoothDevices;
+            this.GV_BluetoothDevice.Name = "GV_BluetoothDevice";
+            this.GV_BluetoothDevice.OptionsBehavior.Editable = false;
+            this.GV_BluetoothDevice.OptionsView.ShowGroupPanel = false;
             // 
             // B_RegisterDevice
             // 
@@ -593,7 +595,7 @@
             this.TN_AdvanceLogin.ResumeLayout(false);
             this.TN_AdvanceLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GC_BluetoothDevices)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GV_BluetoothDevice)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -643,7 +645,7 @@
         private DevExpress.XtraEditors.SimpleButton B_UnregisterDevice;
         private DevExpress.XtraEditors.SimpleButton B_RegisterDevice;
         private DevExpress.XtraGrid.GridControl GC_BluetoothDevices;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView GV_BluetoothDevice;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.SimpleButton B_RefreshDevice;
     }
