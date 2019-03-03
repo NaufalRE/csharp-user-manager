@@ -200,6 +200,24 @@ namespace UserManager.Form
             
         }
 
+        private void RegisterFeature(Boolean Registered)
+        {
+            if (Registered)
+            {
+                GC_BluetoothDevices.Visible = false;
+                B_RegisterDevice.Enabled = false;
+                B_UnregisterDevice.Enabled = true;
+                B_RefreshDevice.Enabled = false;
+            }
+            else
+            {
+                GC_BluetoothDevices.Visible = true;
+                B_RegisterDevice.Enabled = true;
+                B_UnregisterDevice.Enabled = false;
+                B_RefreshDevice.Enabled = true;
+            }
+        }
+
         public void FormOnLoad()
         {
             B_SeekPassword1.Text = "\ue052";
@@ -225,17 +243,11 @@ namespace UserManager.Form
             DataTable AdvanceLoginChecker = DataBr.GetSql("SELECT b_special_key FROM t_user WHERE id_user = '" + GlobalVar.U_ID_USER + "'");
             if(AdvanceLoginChecker.Rows[0][0].ToString() == "")
             {
-                GC_BluetoothDevices.Visible = true;
-                B_RegisterDevice.Enabled = true;
-                B_UnregisterDevice.Enabled = false;
-                B_RefreshDevice.Enabled = true;
+                RegisterFeature(false);
             }
             else
             {
-                GC_BluetoothDevices.Visible = false;
-                B_RegisterDevice.Enabled = false;
-                B_UnregisterDevice.Enabled = true;
-                B_RefreshDevice.Enabled = false;
+                RegisterFeature(true);
             }
         }
 
@@ -668,6 +680,42 @@ namespace UserManager.Form
             GlobalVar.D_B_MAC = GV_BluetoothDevice.GetRowCellValue(GV_BluetoothDevice.GetSelectedRows()[0], "Device MAC").ToString();
         }
 
+        private void RegisterDeviceUser()
+        {
+            Boolean RegDevice;
+            if(GlobalVar.D_B_MAC != "")
+            {
+                RegDevice = DataBr.SetSql("CALL SetSpecialKey('" + GlobalVar.U_ID_USER + "', '" + GlobalVar.D_B_MAC + "')");
+                if (RegDevice)
+                {
+                    XtraMessageBox.Show("Sukses di set !", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RegisterFeature(true);
+                }
+                else
+                {
+                    XtraMessageBox.Show("(´･_･`)ごめんなさい。私はできない", "Status", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void UnregisterDeviceUser()
+        {
+            Boolean UnregDevice;
+            DataTable SpecialKey = DataBr.GetSql("SELECT b_special_key FROM t_user WHERE id_user = '" + GlobalVar.U_ID_USER + "'");
+            if(XtraMessageBox.Show("Apakah anda ingin menghapus perangkat : " + SpecialKey.Rows[0][0].ToString(), "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                UnregDevice = DataBr.SetSql("CALL SetSpecialKey('" + GlobalVar.U_ID_USER + "', NULL)");
+                if (UnregDevice)
+                {
+                    RegisterFeature(false);
+                }
+                else
+                {
+
+                }
+            }
+        }
+
         private void ucUser_Load(object sender, EventArgs e)
         {
             FormOnLoad();
@@ -825,12 +873,12 @@ namespace UserManager.Form
 
         private void B_RegisterDevice_Click(object sender, EventArgs e)
         {
-
+            RegisterDeviceUser();
         }
 
         private void B_UnregisterDevice_Click(object sender, EventArgs e)
         {
-
+            UnregisterDeviceUser();
         }
     }
 }
