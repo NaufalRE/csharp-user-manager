@@ -23,7 +23,6 @@ namespace UserManager.Class
             TableHolder.Columns.Add("Signal Strength");
             TableHolder.Columns.Add("Pair Status");
             int x = 0;
-
             foreach (BluetoothDeviceInfo DeviceInfo in Devices)
             {
                 TableHolder.Rows.Add(new Object[] { "" });
