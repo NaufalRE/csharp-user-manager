@@ -822,5 +822,15 @@ namespace UserManager.Form
         {
             GetBluetoothDevice();
         }
+
+        private void B_RegisterDevice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void B_UnregisterDevice_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

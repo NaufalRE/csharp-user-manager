@@ -544,6 +544,7 @@
             this.B_RegisterDevice.Size = new System.Drawing.Size(91, 23);
             this.B_RegisterDevice.TabIndex = 2;
             this.B_RegisterDevice.Text = "Register";
+            this.B_RegisterDevice.Click += new System.EventHandler(this.B_RegisterDevice_Click);
             // 
             // B_UnregisterDevice
             // 
@@ -552,6 +553,7 @@
             this.B_UnregisterDevice.Size = new System.Drawing.Size(91, 23);
             this.B_UnregisterDevice.TabIndex = 3;
             this.B_UnregisterDevice.Text = "Unregister";
+            this.B_UnregisterDevice.Click += new System.EventHandler(this.B_UnregisterDevice_Click);
             // 
             // B_RefreshDevice
             // 
