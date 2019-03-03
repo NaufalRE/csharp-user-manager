@@ -73,6 +73,7 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.B_RegisterDevice = new DevExpress.XtraEditors.SimpleButton();
             this.B_UnregisterDevice = new DevExpress.XtraEditors.SimpleButton();
+            this.B_RefreshDevice = new DevExpress.XtraEditors.SimpleButton();
             this.xtraScrollableControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TP_User)).BeginInit();
             this.TP_User.SuspendLayout();
@@ -501,6 +502,7 @@
             // TN_AdvanceLogin
             // 
             this.TN_AdvanceLogin.Caption = "Advance Login Option";
+            this.TN_AdvanceLogin.Controls.Add(this.B_RefreshDevice);
             this.TN_AdvanceLogin.Controls.Add(this.B_UnregisterDevice);
             this.TN_AdvanceLogin.Controls.Add(this.B_RegisterDevice);
             this.TN_AdvanceLogin.Controls.Add(this.GC_BluetoothDevices);
@@ -548,6 +550,15 @@
             this.B_UnregisterDevice.Size = new System.Drawing.Size(91, 23);
             this.B_UnregisterDevice.TabIndex = 3;
             this.B_UnregisterDevice.Text = "Unregister";
+            // 
+            // B_RefreshDevice
+            // 
+            this.B_RefreshDevice.Location = new System.Drawing.Point(414, 36);
+            this.B_RefreshDevice.Name = "B_RefreshDevice";
+            this.B_RefreshDevice.Size = new System.Drawing.Size(91, 23);
+            this.B_RefreshDevice.TabIndex = 4;
+            this.B_RefreshDevice.Text = "Refresh Device";
+            this.B_RefreshDevice.Click += new System.EventHandler(this.B_RefreshDevice_Click);
             // 
             // ucUser
             // 
@@ -634,5 +645,6 @@
         private DevExpress.XtraGrid.GridControl GC_BluetoothDevices;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.SimpleButton B_RefreshDevice;
     }
 }

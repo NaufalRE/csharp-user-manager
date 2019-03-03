@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using UserManager.Class;
+using InTheHand.Net.Sockets;
 
 namespace UserManager.Form
 {
@@ -226,12 +227,14 @@ namespace UserManager.Form
                 GC_BluetoothDevices.Visible = true;
                 B_RegisterDevice.Enabled = true;
                 B_UnregisterDevice.Enabled = false;
+                B_RefreshDevice.Enabled = true;
             }
             else
             {
                 GC_BluetoothDevices.Visible = false;
                 B_RegisterDevice.Enabled = false;
                 B_UnregisterDevice.Enabled = true;
+                B_RefreshDevice.Enabled = false;
             }
         }
 
@@ -654,6 +657,28 @@ namespace UserManager.Form
             }
         }
 
+        private void RefreshBluetoothDevice()
+        {
+            BluetoothDeviceInfo[] Devices;
+            using (BluetoothClient SDP = new BluetoothClient())
+                Devices = SDP.DiscoverDevices();
+            DataTable TableHolder = new DataTable();
+            TableHolder.Columns.Add("Device MAC");
+            TableHolder.Columns.Add("Device Name");
+            TableHolder.Columns.Add("Pair Status");
+            int x = 0;
+
+            foreach (BluetoothDeviceInfo DeviceInfo in Devices)
+            {
+                TableHolder.Rows.Add(new Object[] { "" });
+                TableHolder.Rows[x].SetField(0, DeviceInfo.DeviceAddress);
+                TableHolder.Rows[x].SetField(1, DeviceInfo.DeviceName);
+                TableHolder.Rows[x].SetField(2, DeviceInfo.Authenticated);
+                x++;
+            }
+            GC_BluetoothDevices.DataSource = TableHolder;
+        }
+
         private void ucUser_Load(object sender, EventArgs e)
         {
             FormOnLoad();
@@ -797,6 +822,11 @@ namespace UserManager.Form
                     ShowData("Specific", "Operator", T_SearchField.Text);
                 }
             }
+        }
+
+        private void B_RefreshDevice_Click(object sender, EventArgs e)
+        {
+            RefreshBluetoothDevice();
         }
     }
 }
