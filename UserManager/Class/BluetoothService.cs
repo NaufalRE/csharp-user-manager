@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using InTheHand.Net.Sockets;
 using System.Data;
+using System.Windows.Forms;
 
 namespace UserManager.Class
 {
@@ -30,6 +31,7 @@ namespace UserManager.Class
                 TableHolder.Rows[x].SetField(1, DeviceInfo.DeviceName);
                 TableHolder.Rows[x].SetField(2, DeviceInfo.Rssi);
                 TableHolder.Rows[x].SetField(3, DeviceInfo.Authenticated);
+                MessageBox.Show(Convert.ToInt64(TableHolder.Rows[x][2]).ToString());
                 x++;
             }
             return TableHolder;
