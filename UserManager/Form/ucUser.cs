@@ -713,8 +713,7 @@ namespace UserManager.Form
 
         private void DiscoverDevices()
         {
-            BService.DiscoverDevices();
-            GC_BluetoothDevices.DataSource = BService.DiscoverDevices();
+            GC_BluetoothDevices.DataSource = BService.RefreshBluetoothDevice();
         }
 
         private void ucUser_Load(object sender, EventArgs e)
@@ -733,7 +732,6 @@ namespace UserManager.Form
             {
                 ShowData("Specific", "Operator", T_SearchField.Text);
             }
-            
         }
 
         private void DGC_User_MouseClick(object sender, MouseEventArgs e)

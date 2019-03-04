@@ -17,7 +17,6 @@ namespace UserManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
             BonusSkins.Register();
             Application.Run(new ParentForm());
         }
