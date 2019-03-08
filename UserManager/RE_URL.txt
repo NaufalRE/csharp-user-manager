@@ -1,0 +1,70 @@
+﻿これは、アプリケーションをWindows 10設定に切り替えるためのリンクです。
+-NaufalRE. Desu
+[table]
+Category, Setting name, Shortcut key
+System, Display, ms-settings:display
+"",Taskbar, ms-settings:taskbar
+"",Notifications & actions, ms-settings:notifications
+"",Apps & features,""
+"",Multitasking, ""
+"",Tablet mode, ms-settings:tabletmode
+"",Power & sleep, ms-settings:powersleep
+"",Storage, ms-settings:storagesense
+"",Offline maps, ms-settings:maps
+"",Default apps, ""
+"",About, ms-settings:about
+Devices, Printers & scanners, ""
+"",Connected devices, ms-settings:connecteddevices
+"",Bluetooth, ms-settings:bluetooth
+"",Mouse & touchpad, ms-settings:mousetouchpad
+"",Typing, ms-settings:typing
+"",USB, ms-settings:usb
+Network & Internet, Wi-Fi, ms-settings:network-wifi
+"", Airplane mode, ms-settings:network-airplanemode
+"", Data usage, ms-settings:datausage
+"", VPN, ms-settings:network-vpn
+"", Dial-up, ms-settings:network-dialup
+"", Ethernet, ms-settings:network-ethernet
+"", Proxy, ms-settings:network-proxy
+Personalization, Background, ms-settings:personalization-background
+"", Colors, ms-settings:personalization-colors
+"", Lock screen, ms-settings:lockscreen
+"", Themes, ms-settings:themes
+"", Start, ms-settings:personalization-start
+Accounts, Your info, ms-settings:emailandaccounts
+"", Email & app accounts, ms-settings:emailandaccounts
+"", Sign-in options, ms-settings:signinoptions
+"", Work access, ms-settings:workplace
+"", Family & other users, ms-settings:otherusers
+"", Sync your settings, ms-settings:sync
+Time & Language, Date & time, ms-settings:dateandtime
+"", Region & language, ms-settings:regionlanguage
+"", Speech, ms-settings:speech
+Ease of Access, Narrator, ms-settings:easeofaccess-narrator
+"", Magnifier, ms-settings:easeofaccess-magnifier
+"", High contrast, ms-settings:easeofaccess-highcontrast
+"", Closed captions, ms-settings:easeofaccess-closedcaptioning
+"", Keyboard, ms-settings:easeofaccess-keyboard
+"", Mouse, ms-settings:easeofaccess-mouse
+"", Other options, ms-settings:easeofaccess-otheroptions
+Privacy, General, ms-settings:privacy
+"",Location, ms-settings:privacy-location
+"",Camera, ms-settings:privacy-webcam
+"",Microphone, ms-settings:privacy-microphone
+"",Motion, ms-settings:privacy-motion
+"","Speech, inking & typing", ms-settings:privacy-speechtyping
+"",Account info, ms-settings:privacy-accountinfo
+"",Contacts, ms-settings:privacy-contacts
+"",Calendar, ms-settings:privacy-calendar
+"",Call history, ms-settings:privacy-callhistory
+"",Email, ms-settings:privacy-email
+"",Messaging, ms-settings:privacy-messaging
+"",Radios, ms-settings:privacy-radios
+"",Background Apps, ms-settings:privacy-backgroundapps
+"",Other devices, ms-settings:privacy-customdevices
+"",Feedback & diagnostics, ms-settings:privacy-feedback
+Update & Security, Windows Update, ms-settings:windowsupdate
+"", Backup, ms-settings:backup
+"", Recovery, ""
+"", Activation, ""
+"", For developers, ms-settings:developers[/table]

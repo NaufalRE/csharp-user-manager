@@ -74,6 +74,7 @@
             this.B_Refresh = new DevExpress.XtraEditors.SimpleButton();
             this.DGC_User = new DevExpress.XtraGrid.GridControl();
             this.GV_Data = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.B_BTroubleshoot = new DevExpress.XtraEditors.SimpleButton();
             this.xtraScrollableControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TP_User)).BeginInit();
             this.TP_User.SuspendLayout();
@@ -411,6 +412,7 @@
             // TN_AdvanceLogin
             // 
             this.TN_AdvanceLogin.Caption = "Advance Login Option";
+            this.TN_AdvanceLogin.Controls.Add(this.B_BTroubleshoot);
             this.TN_AdvanceLogin.Controls.Add(this.B_RefreshDevice);
             this.TN_AdvanceLogin.Controls.Add(this.B_UnregisterDevice);
             this.TN_AdvanceLogin.Controls.Add(this.B_RegisterDevice);
@@ -564,6 +566,15 @@
             this.GV_Data.OptionsView.ShowFooter = true;
             this.GV_Data.OptionsView.ShowGroupPanel = false;
             // 
+            // B_BTroubleshoot
+            // 
+            this.B_BTroubleshoot.Location = new System.Drawing.Point(511, 36);
+            this.B_BTroubleshoot.Name = "B_BTroubleshoot";
+            this.B_BTroubleshoot.Size = new System.Drawing.Size(91, 23);
+            this.B_BTroubleshoot.TabIndex = 5;
+            this.B_BTroubleshoot.Text = "Troubleshoot";
+            this.B_BTroubleshoot.Click += new System.EventHandler(this.B_BTroubleshoot_Click);
+            // 
             // ucUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -650,5 +661,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView GV_BluetoothDevice;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.SimpleButton B_RefreshDevice;
+        private DevExpress.XtraEditors.SimpleButton B_BTroubleshoot;
     }
 }

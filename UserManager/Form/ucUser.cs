@@ -879,5 +879,11 @@ namespace UserManager.Form
         {
             UnregisterDeviceUser();
         }
+
+        private void B_BTroubleshoot_Click(object sender, EventArgs e)
+        {
+            string TargetURL = "ms-settings:bluetooth";
+            System.Diagnostics.Process.Start(TargetURL);
+        }
     }
 }
